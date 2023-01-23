@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cars Table</h1>
+<table border="3px" width="50%">
+    <thead style="color: rgb(62, 25, 1)">
+      <tr align="center">
+        <th  width="20%" >Name</th>
+        <th width="20%" >Price</th>
+        <th width="20%" >Model</th>
+        <th width="20%" >Image</th>
+        <th width="20%" >Action</th>
+      </tr>
+    </thead>
+
+
+    {%for car in cars %}
+
+
+    <tbody style="color: rgb(1, 90, 46)">
+      <tr align="center">
+        <td>  {{ car.name }}  </td>
+        <td>  {{ car.price }}  </td>
+        <td>  {{ car.model }}  </td>
+        <td>  <img src="{{ car.image.url }}" width="150px" height="100px">  </td>
+        <td > 
+          <a href="{% url 'app1:showwithid' car.id %}" class="btn btn-info" style="margin: 5px;">Show</a>
+          <a href="{% url 'app1:deletewithid' car.id %}" class="btn btn-danger" style="margin: 5px;">Delete</a>
+          <a href="{% url 'app1:updatewithid' car.id %}"  class="btn btn-primary" style="margin: 5px;">Update</a>
+        
+        
+        </td>
+      </tr>
+    </tbody>
+
+
+{%endfor%}
+</table>
+<a href="{% url 'app1:createcar' %} "class="btn btn-success" style="margin-left: 25%; margin-top: 10px ; width: 10% ;">Create</a>
+
+{% endblock %}
+
+
+  

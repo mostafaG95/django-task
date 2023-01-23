@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<h1>Hello Nasr</h1>
+<table border="3px" width="50%">
+    <thead style="color: rgb(62, 25, 1)">
+      <tr align="center">
+        <th  width="33%" >Name</th>
+        <th width="33%" >Age</th>
+        <th width="33%" >Salary</th>
+      </tr>
+    </thead>
+
+
+    {%for user in users %}
+
+
+    <tbody style="color: rgb(1, 90, 46)">
+      <tr align="center">
+        <td>  {{ user.name }}  </td>
+        <td>  {{ user.age }}  </td>
+        <td>  {{ user.salary }}  </td>
+      </tr>
+    </tbody>
+
+
+{%endfor%}
+</table>
+
+
+{% endblock %}
+
+
+  
